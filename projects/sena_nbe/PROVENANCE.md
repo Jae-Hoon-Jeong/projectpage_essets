@@ -66,15 +66,20 @@ Annotation archive: PAIP2020 `training_data.zip`, SHA-256 `ac2bc8c0452ee898a85a6
 - Seg / Full: same package and settings, server 32 (`~/envs/sena34`, pip-freeze identical to the server-34 env),
   `run_segfull.sh` / `run_full_b1.sh`, batch 1 (the release allows batch > 1 only for Eff/Cls). Added per slide as
   each run finishes. Source parquet SHA-256: 03 Seg `06267283…242b5`, 44 Seg `6c19ac75…850c4`.
+- Full (added 2026-10-12): the server-32 Full runs of 2026-10-06 stopped after model construction without output; re-run on server 62
+  (RTX A6000, GPUs checked idle) with the same package (system.json `19835c09…`, `wsi_infer.py` `3b5035b2…`), `--mode full --batch 1`
+  (`run_full_paip_62.sh`). Source parquet SHA-256: 03 Full `12183d0b…76f8e`, 44 Full `b72a8936…0251c`.
 
 | slide | mode | nuclei | files | bytes |
 |---|---|---|---|---|
 | training_data_44 | Eff | 1,135,916 | 1,088 | 40,918,250 |
 | training_data_44 | Cls | 1,135,961 | 1,088 | 40,920,016 |
 | training_data_44 | Seg | 1,133,610 | 1,088 | 40,835,230 |
+| training_data_44 | Full | 1,133,666 | 1,088 | 40,837,393 |
 | training_data_03 | Eff | 527,429 | 644 | 19,004,355 |
 | training_data_03 | Cls | 527,440 | 644 | 19,004,806 |
 | training_data_03 | Seg | 526,359 | 644 | 18,965,830 |
+| training_data_03 | Full | 526,382 | 644 | 18,966,717 |
 
 ### `<slide>/dzi/` (Raw H&E, web-display Deep Zoom)
 - Web-display resolution **0.5044 µm/px** (2x native 0.2522 µm/px): the native Deep Zoom pyramid without its top
@@ -109,7 +114,9 @@ Annotation archive: PAIP2020 `training_data.zip`, SHA-256 `ac2bc8c0452ee898a85a6
   PAIP confirmation results were known; post-hoc, not a preregistered rule). Converter `pred_tumor_area_d.py`
   (SHA-256 `b24893dc…444`) = `pred_tumor_area.py` with d as a parameter; with d = 500 it reproduces the
   `pred_area/` files above exactly (6/6 regions and Dice identical).
-- Dice vs GT (same slides): 03 Eff 0.5803 / Cls 0.6653 / Seg 0.5762; 44 Eff 0.7719 / Cls 0.9336 / Seg 0.7723.
+- Dice vs GT (same slides): 03 Eff 0.5803 / Cls 0.6653 / Seg 0.5762 / Full 0.6611; 44 Eff 0.7719 / Cls 0.9336 / Seg 0.7723 / Full 0.9339.
+  Full maps (2026-10-12) were computed on server 34 with a wrapper HOME whose nbe_v101_paipfull/out points to the NAS recovery snapshot
+  (/media/NAS66/jaehoon/from_34/nbe_v101_paipfull/out; the deleted server-34 out/ was not restored).
 - The d = 500 files in `pred_area/` are kept unchanged.
 
 ## v2/fourier (Fourier-epicycle illustration of PanNuke ground-truth nucleus contours, added 2026-10-11)
