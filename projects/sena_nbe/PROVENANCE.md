@@ -160,3 +160,10 @@ final frame (`ffmpeg -sseof -0.05 -frames:v 1 -q:v 3`). GIF versions were not pu
 | `v2/fourier/nucleus3_epicycles_K10.mp4` | 249751 | `ec0a9948e5bc136ca86cb84649b1346221d6b0b164f0eee882d04a66dbd28692` |
 | `v2/fourier/nucleus4_epicycles_K10.jpg` | 50747 | `0f97744fa40f2d41c904c778e90945fcb1945c29b3b02c87f68c4bede404477d` |
 | `v2/fourier/nucleus4_epicycles_K10.mp4` | 266075 | `fd99ca86db50f50b119756cdb5da9aeddc39fb3c4ae990efd46db84a71623b92` |
+
+## v2/paip/figs (added 2026-10-12)
+- `tumour_panel_training_data_46.jpg`: PAIP2020 training_data_46 (CC BY-NC 4.0, Seoul National University Hospital). H&E thumbnail with the
+  pathologist tumour outline, and the tumour-region maps of SENA Cls (canonical construction) and seven comparators on the harmonized 25-µm
+  scorer raster (prediction AND release tissue mask); per-panel Dice = same scorer (matches comparators_44_rows.json). Slide chosen for
+  illustration as one where the SENA map is closest to the outline. Generated on server 34 by
+  cellellipse nbe_extension/paip44/render_tumour_panel.py (frozen functions imported); JPEG q88. The slide file did not leave the server.
