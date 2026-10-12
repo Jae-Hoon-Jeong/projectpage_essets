@@ -167,3 +167,7 @@ final frame (`ffmpeg -sseof -0.05 -frames:v 1 -q:v 3`). GIF versions were not pu
   scorer raster (prediction AND release tissue mask); per-panel Dice = same scorer (matches comparators_44_rows.json). Slide chosen for
   illustration as one where the SENA map is closest to the outline. Generated on server 34 by
   cellellipse nbe_extension/paip44/render_tumour_panel.py (frozen functions imported); JPEG q88. The slide file did not leave the server.
+- `tumour_panel_training_data_46_v2.jpg` (2026-10-12, replaces v1 on the page; v1 kept): adds a ground-truth panel; every filled region
+  (ground truth and predictions) is restricted to raw tissue (saturation-Otsu without hole filling/closing, 25-µm cells with >= 50 % tissue;
+  cellellipse nbe_extension/paip44/TISSUE_ONLY_DICE_DEFINITION.md); outline drawn unchanged; titles give Dice (common scorer) and tissue-only
+  Dice. Maps from tissue_only_44.py; rendered by render_tumour_panel_tissue.py.
