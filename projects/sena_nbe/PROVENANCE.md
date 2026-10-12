@@ -171,3 +171,5 @@ final frame (`ffmpeg -sseof -0.05 -frames:v 1 -q:v 3`). GIF versions were not pu
   (ground truth and predictions) is restricted to raw tissue (saturation-Otsu without hole filling/closing, 25-µm cells with >= 50 % tissue;
   cellellipse nbe_extension/paip44/TISSUE_ONLY_DICE_DEFINITION.md); outline drawn unchanged; titles give Dice (common scorer) and tissue-only
   Dice. Maps from tissue_only_44.py; rendered by render_tumour_panel_tissue.py.
+- `tumour_panel_training_data_46_v3.jpg` (2026-10-12, replaces v2 on the page): 4 x 3 layout = ground truth (tissue only, outline) + all 11
+  methods of the page table in table order (adds IDaRS, ZEUS-CONCH official blur, SENA Eff); same tissue-only rendering and titles as v2.
