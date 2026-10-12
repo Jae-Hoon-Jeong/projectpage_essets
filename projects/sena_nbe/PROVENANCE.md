@@ -173,3 +173,5 @@ final frame (`ffmpeg -sseof -0.05 -frames:v 1 -q:v 3`). GIF versions were not pu
   Dice. Maps from tissue_only_44.py; rendered by render_tumour_panel_tissue.py.
 - `tumour_panel_training_data_46_v3.jpg` (2026-10-12, replaces v2 on the page): 4 x 3 layout = ground truth (tissue only, outline) + all 11
   methods of the page table in table order (adds IDaRS, ZEUS-CONCH official blur, SENA Eff); same tissue-only rendering and titles as v2.
+- `tumour_panel_training_data_46_v4.jpg` (2026-10-12, replaces v3 on the page): as v3, but predicted tissue inside the outline is teal (TP)
+  and predicted tissue outside the outline is red (FP); false negatives are left unfilled.
